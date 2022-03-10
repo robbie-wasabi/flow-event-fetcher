@@ -1,0 +1,58 @@
+{
+  "emulators": {
+    "default": {
+      "port": 3570,
+      "serviceAccount": "emulator-account"
+    }
+  },
+  "contracts": {
+    "NonFungibleToken": {
+      "source": "./cdc/contracts/core/NonFungibleToken.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7",
+        "cloud-emulator": "0xf8d6e0586b0a20c7",
+        "testnet": "0x631e88ae7f1d7c20"
+      }
+    },
+    "FungibleToken": {
+      "source": "./cdc/contracts/core/FungibleToken.cdc",
+      "aliases": {
+        "emulator": "0xee82856bf20e2aa6",
+        "cloud-emulator": "0xee82856bf20e2aa6",
+        "testnet": "0x9a0766d93b6608b7"
+      }
+    },
+    "NFTStorefront": {
+      "source": "./cdc/contracts/core/NFTStorefront.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7",
+        "cloud-emulator": "0xf8d6e0586b0a20c7",
+        "testnet": "0x94b06cfca1d8a476"
+      }
+    },
+    "FlowToken": {
+      "source": "./cdc/contracts/FlowToken.cdc",
+      "aliases": {
+        "emulator": "0x0ae53cb6e3f42a79",
+        "cloud-emulator": "0x0ae53cb6e3f42a79",
+        "testnet": "0x7e60df042a9c0868"
+      }
+    }
+  },
+  "networks": {
+    "emulator": "127.0.0.1:3570",
+    "mainnet": "access.mainnet.nodes.onflow.org:9000",
+    "testnet": "access.devnet.nodes.onflow.org:9000"
+  },
+  "accounts": {
+    "emulator-account": {
+      "address": "f8d6e0586b0a20c7",
+      "key": "7db7c615be03908f046194902863ac229198a81c087b3b2088e66fd4d4560460"
+    }
+  },
+  "deployments": {
+    "emulator": {
+      "emulator-account": ["NonFungibleToken", "FungibleToken", "NFTStorefront"]
+    }
+  }
+}
