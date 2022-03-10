@@ -59,11 +59,6 @@ func fetchEvents(eventType string, blockRange uint64) {
 		fmt.Println(fmt.Printf("start height: %v", startBlockHeight))
 		fmt.Println(fmt.Printf("end height: %v", latestBlockHeight))
 
-		// todo: in order to get all relevant events, we must query all blocks
-		// in height range - once per event type. this query returns all events grouped
-		// by block in height range and *only* includes events that match the query type
-		// this means that blocks will be appended multiple times
-		// there is probably a better way to do this
 		blockEvents := []client.BlockEvents{}
 		bes, err := c.GetEventsForHeightRange(ctx, client.EventRangeQuery{
 			Type:        eventType,
